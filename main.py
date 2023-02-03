@@ -17,7 +17,8 @@ def home():
 
 @app.get("/random")
 def generate_random_number():
-    return {"message": random()}
+    return {"message": random(),
+            "current_time": ctime(),}
 
 
 @app.get("/hello/{name}")
