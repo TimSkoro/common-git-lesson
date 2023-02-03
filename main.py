@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from time import ctime
+from random import random
 
 app = FastAPI()
 
@@ -12,6 +13,11 @@ def root():
 @app.get("/home")
 def home():
     return {"message": "Welcome to Home Page"}
+
+
+@app.get("/random")
+def generate_random_number():
+    return {"message": random()}
 
 
 @app.get("/hello/{name}")
