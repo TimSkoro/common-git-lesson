@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from time import ctime
 
 app = FastAPI()
 
@@ -15,4 +16,5 @@ def home():
 
 @app.get("/hello/{name}")
 def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+    return {"message": f"Hello {name.capitalize()}",
+            "current_time": ctime(),}
